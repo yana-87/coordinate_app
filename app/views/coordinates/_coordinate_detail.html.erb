@@ -1,0 +1,21 @@
+<div style="max-width: 600px; margin: 0 auto; padding: 24px; text-align: center;">
+
+  <% if coordinate.image.attached? %>
+    <div style="margin-bottom: 24px;">
+      <%= image_tag coordinate.image, style: "width: 100%; height: auto; border-radius: 8px;" %>
+    </div>
+  <% end %>
+
+  <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 8px;">
+    <%= coordinate.title.presence || "No title" %>
+  </h2>
+
+  <p style="font-size: 1rem; margin-bottom: 12px;">
+    <%= coordinate.memo.presence || "No memo" %>
+  </p>
+
+  <p style="font-size: 0.875rem; color: gray; margin-bottom: 24px;">
+    <%= coordinate.created_at.strftime("%Y.%m.%d に登録") %>
+  </p>
+
+</div>

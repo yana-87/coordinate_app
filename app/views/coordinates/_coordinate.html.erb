@@ -1,0 +1,9 @@
+<div id="<%= dom_id coordinate %>">
+
+  <% if coordinate.image.attached? %>
+    <%= link_to coordinate do %>
+      <%= image_tag coordinate.image, style: "width: 100%; max-width: 300px; height: auto; display: block; margin-bottom: 20px" %>
+    <% end %>
+  <% end %>
+
+</div>

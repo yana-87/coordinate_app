@@ -1,0 +1,12 @@
+<% content_for :title, "Editing coordinate" %>
+
+<h1>Editing coordinate</h1>
+
+<%= render "form", coordinate: @coordinate %>
+
+<br>
+
+<div>
+  <%= link_to "Show this coordinate", @coordinate %> |
+  <%= link_to "Back to coordinates", coordinates_path %>
+</div>

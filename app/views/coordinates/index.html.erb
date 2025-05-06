@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Coordinates" %>
+
+<div class="top-button-wrapper">
+  <%= link_to "＋ 新しいコーデを追加", new_coordinate_path, class: "new-coordinate-button" %>
+</div>
+
+<div class="coordinates-grid">
+  <% @coordinates.each do |coordinate| %>
+    <%= render partial: "coordinate_card", locals: { coordinate: coordinate } %>
+  <% end %>
+</div>

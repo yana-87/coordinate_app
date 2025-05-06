@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render partial: "coordinate_detail", locals: { coordinate: @coordinate } %>
+
+<div style="text-align: center; margin-top: 24px;">
+  <%= link_to "Edit this coordinate", edit_coordinate_path(@coordinate) %> |
+  <%= link_to "Back to coordinates", coordinates_path %>
+  <%= button_to "Destroy this coordinate", @coordinate, method: :delete %>
+</div>

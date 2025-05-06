@@ -1,0 +1,5 @@
+  <% if coordinate.image.attached? %>
+    <%= link_to coordinate do %>
+      <%= image_tag coordinate.image, class: "coordinate-image" %>
+    <% end %>
+  <% end %>

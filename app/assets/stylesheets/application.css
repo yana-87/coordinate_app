@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Grid全体のスタイル */
+.coordinates-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  /* PC表示で5カラム */
+}
+
+@media (max-width: 600px) {
+  .coordinates-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* スマホ表示で3カラム */
+  }
+}
+
+/* Grid内の画像スタイル */
+.coordinates-grid .coordinate-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  /* 画像の余白を防ぐ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* アニメーションの設定 */
+}
+
+.coordinates-grid .coordinate-image:hover {
+  transform: scale(1.03);
+  /* 画像を少し拡大 */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  /* 影を追加 */
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  /* 中央寄せ */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* 下に余白を追加 */
+}
+
+.top-button-wrapper {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.new-coordinate-button {
+  display: inline-block;
+  background-color: #ff6f61;
+  /* 好みに応じて変更 */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.new-coordinate-button:hover {
+  background-color: #e85b50;
+}
