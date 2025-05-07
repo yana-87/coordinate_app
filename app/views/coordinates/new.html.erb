@@ -1,11 +1,32 @@
 <% content_for :title, "New coordinate" %>
 
-<h1>New coordinate</h1>
+<style>
+  @media (max-width: 768px) {
+    .coordinate-form {
+      padding: 10px;
+    }
+
+    .coordinate-form h1 {
+      font-size: 1.5rem;
+    }
+
+    .coordinate-form .form-group {
+      margin-bottom: 15px;
+    }
+
+    .coordinate-form .form-submit-button {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
+  }
+</style>
+
+<h1>新規登録</h1>
 
 <%= render "form", coordinate: @coordinate %>
 
 <br>
 
-<div>
-  <%= link_to "Back to coordinates", coordinates_path %>
+<div style="text-align: center;">
+  <%= link_to "← コーディネート一覧へ", coordinates_path, style: "color: white;" %>
 </div>
