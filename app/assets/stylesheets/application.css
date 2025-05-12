@@ -17,7 +17,8 @@
 /* Grid全体のスタイル */
 .coordinates-grid {
   display: grid;
-  gap: 10px;
+  gap: 16px;
+  padding: 16px;
   grid-template-columns: repeat(5, 1fr);
   /* PC表示で5カラム */
 }
@@ -39,6 +40,8 @@
   /* 画像の余白を防ぐ */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* アニメーションの設定 */
+  border: 4px solid #ddd;
+  box-sizing: border-box;
 }
 
 .coordinates-grid .coordinate-image:hover {
@@ -49,8 +52,8 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
+  background-color: #f1f1f1;
+  color: #444;
 }
 
 h1 {
@@ -68,10 +71,10 @@ h1 {
 
 .new-coordinate-button {
   display: inline-block;
-  background-color: #ff6f61;
+  background-color: #3f72af;
   /* 好みに応じて変更 */
-  color: white;
-  padding: 12px 20px;
+  color: #fff;
+  padding: 14px 30px;
   border-radius: 25px;
   font-weight: bold;
   text-decoration: none;
@@ -81,5 +84,5 @@ h1 {
 }
 
 .new-coordinate-button:hover {
-  background-color: #e85b50;
+  background-color: #365f91;
 }
