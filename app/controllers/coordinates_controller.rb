@@ -4,9 +4,9 @@ class CoordinatesController < ApplicationController
   # GET /coordinates or /coordinates.json
   def index
     @coordinates = Coordinate.with_attached_image
-                             .where.not(id: Coordinate.left_outer_joins(:image_attachment)
-                                                       .where(active_storage_attachments: { id: nil }))
-                             .page(params[:page]).per(10)
+                              .where.not(id: Coordinate.left_outer_joins(:image_attachment)
+                              .where(active_storage_attachments: { id: nil }))
+                              .page(params[:page]).per(10)
   end
 
 

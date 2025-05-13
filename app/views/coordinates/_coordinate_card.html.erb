@@ -1,5 +1,13 @@
-  <% if coordinate.image.attached? %>
-    <%= link_to coordinate do %>
-      <%= image_tag coordinate.image, class: "coordinate-image", loading: "lazy" %>
-    <% end %>
+<% if coordinate.image.attached? %>
+  <%= link_to coordinate do %>
+    <%= image_tag(
+          # 元の画像ではなく variant を指定
+          coordinate.image.variant(resize_to_limit: [300, 400]).processed,
+          class:      "coordinate-image",
+          loading:    "lazy",          # スクロールされるまで遅延読み込み
+          decoding:   "async",         # デコードを非同期で行いメインスレッドの負荷を分散
+          width:      300,             # レイアウトシフト防止のため明示的に width/height を指定
+          height:     400
+        ) %>
   <% end %>
+<% end %>
