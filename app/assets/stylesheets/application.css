@@ -119,3 +119,46 @@ h1 {
   font-weight: bold;
   pointer-events: none;
 }
+
+.back-button a {
+  background: #f9f9f9;
+  border: 2px solid #313131;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 280px;
+  padding: 10px 25px;
+  color: #313131;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.back-button a:hover {
+  background: #313131;
+  color: #fff;
+  border-color: #313131;
+}
+
+.back-button a:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #313131;
+  border-left: 3px solid #313131;
+  transform: rotate(-45deg) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  border-radius: 1px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.back-button a:hover:before {
+  border-color: #fff;
+}
