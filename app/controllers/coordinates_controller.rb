@@ -3,8 +3,12 @@ class CoordinatesController < ApplicationController
 
   # GET /coordinates or /coordinates.json
   def index
-    @coordinates = Coordinate.all
+    @coordinates = Coordinate.with_attached_image
+                             .where.not(id: Coordinate.left_outer_joins(:image_attachment)
+                                                       .where(active_storage_attachments: { id: nil }))
+                             .page(params[:page]).per(10)
   end
+
 
   # GET /coordinates/1 or /coordinates/1.json
   def show
